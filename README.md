@@ -18,7 +18,7 @@ To view please:
 - please visit [here]() to interact and view the website.
 
 ### Categories:
-- [User Home Page](#User-Home)
+- [User Home Page](#user-home)
 
 - [Select Chore](#select-chore)
 
@@ -31,7 +31,7 @@ What your child sees.
 <details>
 <summary>User home page</summary>
 <br>
- <img width="450" alt="User View" src="https://user-images.githubusercontent.com/64617435/150653356-e08529e8-c9c6-4a49-b6b7-f2320674421c.png">
+ <img width="450" alt="User View" src="https://user-images.githubusercontent.com/64617435/150655723-2dc71725-4053-47db-830f-40c723fba507.png">
 </details>
 
 #### Select Chore
