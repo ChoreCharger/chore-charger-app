@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';
 
 
 import './User.css';
@@ -19,9 +19,21 @@ const User = () => {
       </div>
       <div 
         className="button-container">
-        <button className="user-button">Start New Chore</button>
-        <button className="user-button">Completed Chores</button>
-        <button className="user-button">Pending Chores</button>
+          <Link 
+            to="/select" 
+            className="user-button"
+            >Start New Chore
+          </Link>
+          <Link 
+            to="/complete"
+            className="user-button"
+            >Completed Chores
+          </Link>
+          <Link 
+            to="/pending"
+            className="user-button"
+            >Pending Chores
+          </Link>
       </div>
     </div>
   );
