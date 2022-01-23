@@ -1,10 +1,18 @@
 import './ViewComplete.css';
 
-const ViewComplete = () => {
+const ViewComplete = ({ completed }) => {
   return (
-    <div className="ViewComplete">
+    <ul className="ViewComplete">
+      {completed.map(chore => 
+        <li  
+          className="completed-item"
+          key={chore.id}
+          >
+          <p>${chore.price.toFixed(2)}</p>
+          <p>{chore.title}</p>
+        </li>)}
 
-    </div>
+    </ul>
   );
 }
 

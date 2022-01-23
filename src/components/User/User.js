@@ -1,13 +1,22 @@
 import React, {useState, useEffect} from 'react';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';
 
 
 import './User.css';
 
-const User = () => {
-  const [userName, setUserName] = useState("User");
+const User = ({ info }) => {
+  const [userName, setUserName] = useState(info.name);
   const [userCredit, setUserCredit] = useState("35.75");
+
+  const findCreditTotal = (chores) => {
+    let total = 0
+    chores.forEach(chore => total += chore.price)
+    setUserCredit(total.toFixed(2))
+  }
+
+  useEffect(() => {
+    findCreditTotal(info.completedChores)
+  })
 
   return (
     <div className="User">
@@ -18,15 +27,24 @@ const User = () => {
         <h3>You have earned</h3>
         <h1>${userCredit}</h1>
       </div>
-      <Stack 
-        spacing={2} 
-        direction="column"
-        justifyContent="center"
-        alignItems="center">
-        <Button variant="contained">Start New Chore</Button>
-        <Button variant="contained">Completed Chores</Button>
-        <Button variant="contained">Pending Chores</Button>
-      </Stack>
+      <div 
+        className="button-container">
+          <Link 
+            to="/select" 
+            className="user-button"
+            >Start New Chore
+          </Link>
+          <Link 
+            to="/complete"
+            className="user-button"
+            >Completed Chores
+          </Link>
+          <Link 
+            to="/pending"
+            className="user-button"
+            >Pending Chores
+          </Link>
+      </div>
     </div>
   );
 }
