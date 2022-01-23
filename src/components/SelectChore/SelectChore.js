@@ -10,7 +10,7 @@ const SelectChore = ({ chores }) => {
               className="chore-button"
               key={chore.id}
               >
-              <p>${chore.price}</p>
+              <p>${chore.price.toFixed(2)}</p>
               <p>{chore.title}</p>
             </button>)}
       </div>

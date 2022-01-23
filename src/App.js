@@ -57,11 +57,17 @@ const App = () => {
       <Routes>
         <Route 
           path="/select" 
-          element={ <SelectChore chores={possibleChores} />}
+          element={<SelectChore chores={possibleChores} />}
         />
-        <Route path="/complete" element={<ViewComplete/>} />
+        <Route 
+          path="/complete" 
+          element={<ViewComplete completed={newUser.completedChores}/>} 
+        />
         <Route path="/pending" element={<ViewPending/>} />
-        <Route path="/" exact element={<User/>}/>
+        <Route 
+          path="/" exact 
+          element={<User info={newUser} />}
+        />
       </Routes>
     </div>
   );

@@ -4,9 +4,19 @@ import { Link } from 'react-router-dom';
 
 import './User.css';
 
-const User = () => {
-  const [userName, setUserName] = useState("User");
+const User = ({ info }) => {
+  const [userName, setUserName] = useState(info.name);
   const [userCredit, setUserCredit] = useState("35.75");
+
+  const findCreditTotal = (chores) => {
+    let total = 0
+    chores.forEach(chore => total += chore.price)
+    setUserCredit(total.toFixed(2))
+  }
+
+  useEffect(() => {
+    findCreditTotal(info.completedChores)
+  })
 
   return (
     <div className="User">
