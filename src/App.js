@@ -29,6 +29,27 @@ const possibleChores = [
   price: 2},
 ]
 
+const newUser = {
+  name: "Dingus",
+  completedChores: [
+    {id: 1,
+    title: "Collect Trash",
+    price: 1.50},
+    {id: 2,
+    title: "Feed the Dogs",
+    price: 1},
+    {id: 3,
+    title: "Walk the Dogs",
+    price: 1},
+    {id: 4,
+    title: "Feed the Dogs",
+    price: 1},
+    {id: 5,
+    title: "Walk the Dogs",
+    price: 1},
+  ],
+}
+
 const App = () => {
   return (
     <div className="App">
