@@ -10,6 +10,7 @@ import User from './components/User/User'
 import SelectChore from './components/SelectChore/SelectChore'
 import ViewComplete from './components/ViewComplete/ViewComplete';
 import ViewPending from './components/ViewPending/ViewPending';
+import { useState } from 'react';
 
 const possibleChores = [
   {id: 1,
@@ -28,6 +29,8 @@ const possibleChores = [
   title: "Clean Bathroom",
   price: 2},
 ]
+
+const pendingChores = []
 
 const newUser = {
   name: "Dingus",
@@ -51,22 +54,26 @@ const newUser = {
 }
 
 const App = () => {
+  const [pending, setPending] = useState([]);
+  const [possible, setPossible] = useState(possibleChores)
+  const [user, setUser] = useState(newUser)
+
   return (
     <div className="App">
       <Nav/>
       <Routes>
         <Route 
           path="/select" 
-          element={<SelectChore chores={possibleChores} />}
+          element={<SelectChore chores={possible} />}
         />
         <Route 
           path="/complete" 
-          element={<ViewComplete completed={newUser.completedChores}/>} 
+          element={<ViewComplete completed={user.completedChores}/>} 
         />
-        <Route path="/pending" element={<ViewPending/>} />
+        <Route path="/pending" element={<ViewPending pendingChores={pending} />} />
         <Route 
           path="/" exact 
-          element={<User info={newUser} />}
+          element={<User info={user} />}
         />
       </Routes>
     </div>
